@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    justify-content: center;
+    /* margin: 100px 0px; */
+    padding-top: 10%;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    min-width: 300px;
+  }
+
+  mat-card-title,
+  mat-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mat-card {
+    border-radius: 0px !important;
+  }
+
+  .mat-card:not([class*="mat-elevation-z"]) {
+    box-shadow: 0px 1px 1px -1px rgb(0, 0, 0),0px 1px 4px 0px rgb(0, 0, 0),0px 1px 4px 0px rgb(0, 0, 0) !important;
+  }
+
+  .mat-raised-button {
+    border-radius: 0px !important;
+  }
+
+  mat-hint{
+    color: #f44336 !important;
+  }
+

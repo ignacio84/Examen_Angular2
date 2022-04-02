@@ -1,0 +1,8 @@
+mat-toolbar{
+    justify-content: space-between;
+    height: 50px !important;
+}
+
+span{
+    padding-right: 1rem;
+}

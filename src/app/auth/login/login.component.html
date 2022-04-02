@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-title>Ingresar</mat-card-title>
+<mat-card-content>
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Usuario" autocomplete="off" formControlName="usuario">
+      <mat-hint align="start" *ngIf="getError('usuario')"><strong color="warn">Minimo 4 caracteres.</strong> </mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" autocomplete="off" formControlName="password" color="warn">
+      <mat-hint align="start" *ngIf="getError('password')"><strong >Favor de ingresar password.</strong>
+      </mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-checkbox formControlName="recordar">Recordarme.</mat-checkbox>
+  </p>
+  <div class="button" >
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Ingresar</button>
+  </div>
+</form>
+</mat-card-content>
+</mat-card>
