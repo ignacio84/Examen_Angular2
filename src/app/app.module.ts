@@ -10,6 +10,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PagesModule } from './pages/pages.module';
     AuthModule,
     SharedModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

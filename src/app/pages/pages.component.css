@@ -1,0 +1,12 @@
+.example-container {
+    width: 100%;
+    height: 93%;
+    margin: 0px;
+  }
+
+  .sidenav{
+    width: 200px;
+    overflow: auto;
+  }
+
+  

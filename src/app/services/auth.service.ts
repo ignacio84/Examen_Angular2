@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { UsuarioInterface } from '../interfaces/usuario-form.interface';
+import { UsuarioInterface } from '../interfaces/usuario.interface';
 
 
 const USR_STORAGE = 'AHFADF1';

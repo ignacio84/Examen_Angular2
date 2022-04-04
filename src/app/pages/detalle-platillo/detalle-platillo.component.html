@@ -1,0 +1,18 @@
+<mat-card *ngIf="platillo">
+    <mat-card-title>
+        {{platillo.strMeal}}
+    </mat-card-title>
+    <mat-card-subtitle>
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip color="primary" selected>{{platillo.strArea}}</mat-chip>
+            <mat-chip color="accent" selected>{{platillo.strCategory}}</mat-chip> 
+          </mat-chip-list>
+    </mat-card-subtitle>
+    <mat-card-content layout-fill>
+        <div class="content">
+            <iframe *ngIf="platillo.strYoutube" class="thumb" [src]="platillo.strYoutube | urlSafe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="content-text">{{platillo.strInstructions}}</h3>
+            <img class="thumb" mat-card-image [src]="platillo.strMealThumb">
+        </div>
+    </mat-card-content>
+</mat-card>
