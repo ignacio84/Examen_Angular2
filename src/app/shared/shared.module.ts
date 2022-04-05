@@ -7,6 +7,7 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { TableMealsComponent } from './table-meals/table-meals.component';
+import { CaruselComponent } from './carusel/carusel.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TableMealsComponent } from './table-meals/table-meals.component';
     BottomSheetComponent,
     NavbarComponent,
     TableMealsComponent,
+    CaruselComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { TableMealsComponent } from './table-meals/table-meals.component';
     NotFoundComponent,
     DialogComponent,
     NavbarComponent,
+    CaruselComponent,
     TableMealsComponent
   ]
 })
