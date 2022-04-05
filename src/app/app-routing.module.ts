@@ -7,11 +7,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
-   {
-     path: 'pages',
-     canLoad:[AuthGuard],
-     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
-   },
+
+  {
+    path: 'pages',
+    canLoad:[AuthGuard],
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+  },
   { path: '404', component: NotFoundComponent},
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', redirectTo: '404' },

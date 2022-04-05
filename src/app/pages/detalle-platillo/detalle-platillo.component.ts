@@ -26,7 +26,8 @@ export class DetallePlatilloComponent implements OnDestroy {
       {
          this.platillo = resp;
          console.log(this.platillo);
-      }
+      }, 
+      err => console.log
     );
    }
    

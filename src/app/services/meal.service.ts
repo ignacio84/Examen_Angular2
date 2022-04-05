@@ -30,5 +30,46 @@ export class MealService {
       map((data:any)=>{return data.meals[0]})
     );
   }  
-  // www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+
+  getIngredients(): Observable<any>{
+    let params = new HttpParams();
+    params = params.append('i', 'list');
+    return this.http.get(`${base_url}/list.php`,{params})
+    .pipe(
+      map((data:any)=>data.meals)
+    );
+  } 
+
+  getMealsByIngredient(strIngredient:string): Observable<any>{
+    let params = new HttpParams();
+    params = params.append('i', strIngredient);
+    return this.http.get(`${base_url}/filter.php`,{params})
+    .pipe(
+      map((data:any)=>data.meals)
+    );
+  }  
+
+
+  getList(type:'i' |'a'|'c'): Observable<any>{
+    let params = new HttpParams();
+    params = params.append(type, 'list');
+    return this.http.get(`${base_url}/list.php`,{params})
+    .pipe(
+      map((data:any)=>data.meals)
+    );
+  } 
+
+  getListFilterMeal(type:'i' |'a'|'c'| string, term:string): Observable<any>{
+    let params = new HttpParams();
+    params = params.append(type, term);
+    return this.http.get(`${base_url}/filter.php`,{params})
+    .pipe(
+      map((data:any)=>data.meals)
+    );
+  } 
+
+
+//   Filtrar por categoría www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+// Filtrar por área www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
+// Filtrar por ingrediente principal www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
 }

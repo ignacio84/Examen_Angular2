@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>Buscar</mat-card-title>
+<mat-card-content>
+  <form [formGroup]="buscarForm" (ngSubmit)="onSubmit()">
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Por Aréa</mat-label> 
+    <mat-select formControlName="area">
+       <mat-option *ngFor="let area of listArea" [value]="area.strArea" placeholder="Nombre">{{area.strArea}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Por Ingrediente</mat-label>
+    <mat-select formControlName="ingrediente">
+       <mat-option *ngFor="let ingr of listIngr" [value]="ingr.strIngredient">{{ingr.strIngredient}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Por Categorías</mat-label>
+    <mat-select formControlName="categoria">
+      <mat-option *ngFor="let cat of listCat" [value]="cat.strCategory">{{cat.strCategory}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Buscar</button>
+</div>
+</form>
+</mat-card-content>
+</mat-card>
+<app-table-meals [listMeals]="listMeals"></app-table-meals>

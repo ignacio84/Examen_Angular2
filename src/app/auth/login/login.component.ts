@@ -21,7 +21,7 @@ export class LoginComponent implements OnDestroy{
   constructor(private router: Router, private fb: FormBuilder,public dialog: MatDialog,private authService:AuthService) { }
   
   ngOnDestroy(): void {
-    // this.loginForm.reset;
+    this.loginForm.reset;
   }
 
   getError(name: string) {
@@ -39,7 +39,6 @@ export class LoginComponent implements OnDestroy{
   }
 
   submit() {
-    
     if(this.authService.login(this.loginForm.value)){
       //this.router.navigate(['/pages/home']);
       this.router.navigateByUrl('/pages/home');

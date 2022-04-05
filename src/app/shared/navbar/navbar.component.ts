@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { filter, map } from 'rxjs/operators';
 import { MenuInterface } from 'src/app/interfaces/menu.interface.';
+import { AuthService } from 'src/app/services/auth.service';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -19,14 +20,15 @@ export class NavbarComponent implements OnDestroy {
   public titulo: string='';
   public tituloSub$!: Subscription;
 
-  constructor(private router: Router,private menuService:MenuService) {
+  constructor(private router: Router, private menuService: MenuService, private authService: AuthService) {
     this.menu=menuService.menu;
-    this.getDataFromRoute()
+    this.tituloSub$=this.getDataFromRoute()
       .subscribe(
           ({ titulo }) => {
            this.titulo = titulo
-        //   document.title = `AdminPro - ${titulo}`;//aplica el titulo a la pestaña de la pagina
-        });
+        },
+        err => console.log
+        );
   }
 
   ngOnDestroy(): void {
@@ -40,5 +42,11 @@ export class NavbarComponent implements OnDestroy {
         filter((event: ActivationEnd) => event.snapshot.firstChild == null),
         map((event: ActivationEnd) => event.snapshot.data)
       )
+  }
+
+  logOut() {
+     if(this.authService.logOut()){
+      this.router.navigate(['..']);
+     }
   }
 }

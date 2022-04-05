@@ -7,12 +7,8 @@ import { MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css']
 })
-export class DialogComponent implements OnInit {
+export class DialogComponent{
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { tipo: number, titulo: string, mensaje: string }) { }
-
-  ngOnInit(): void {
-    console.log('data',this.data);
-  }
 
 }

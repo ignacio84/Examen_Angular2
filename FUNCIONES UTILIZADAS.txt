@@ -1,0 +1,16 @@
+*Angular 13.
+*Rutas.
+*Angular Material.
+*Guards.
+*Interfaces.
+*LocalStorage.
+*Reactive Form.
+*Validadores.
+*@Input()
+*@Output();
+*Emmiter.
+*Pipe.
+*UrlAnitizer.
+*LazyLoad.
+*Pipes.
+*Variables De Ambiente.

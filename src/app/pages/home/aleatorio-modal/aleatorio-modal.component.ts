@@ -7,15 +7,12 @@ import { platilloInterface } from 'src/app/interfaces/platillo.interface';
   templateUrl: './aleatorio-modal.component.html',
   styleUrls: ['./aleatorio-modal.component.css']
 })
-export class AleatorioModalComponent implements OnInit {
+export class AleatorioModalComponent {
 
   @Input() public platillo!:platilloInterface;
   @Output() modal: EventEmitter<boolean> = new EventEmitter();
 
   constructor( public router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   cerrar(){
     this.modal.emit(false);

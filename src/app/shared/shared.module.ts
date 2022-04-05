@@ -5,6 +5,8 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MaterialModule } from '../material/material.module';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { TableMealsComponent } from './table-meals/table-meals.component';
 
 @NgModule({
   declarations: [
@@ -12,15 +14,18 @@ import { NavbarComponent } from './navbar/navbar.component';
     DialogComponent,
     BottomSheetComponent,
     NavbarComponent,
+    TableMealsComponent,
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports:[
     NotFoundComponent,
     DialogComponent,
     NavbarComponent,
+    TableMealsComponent
   ]
 })
 export class SharedModule { }

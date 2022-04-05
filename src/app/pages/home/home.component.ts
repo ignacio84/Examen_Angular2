@@ -21,14 +21,12 @@ export class HomeComponent implements OnDestroy {
         this.platillo=resp
         this.modal=(this.platillo)?true :false;
         }
+      , err => console.log
     );
   }
   ngOnDestroy(): void {
     this.mealSub$.unsubscribe();
   }
-
-  // ngOnInit(): void {
-  // }
 
   setModal(modal:boolean){
     console.log('setModal', modal);

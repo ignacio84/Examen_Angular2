@@ -1,0 +1,23 @@
+<mat-card *ngIf="usuario">
+    <mat-card-title>
+        {{usuario.nombre+' '+usuario.apellido | uppercase }}
+    </mat-card-title>
+    <mat-card-content layout-fill>
+        <div class="content">
+            <iframe *ngIf="usuario.img" class="thumb" src="/assets/img/photo.jpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3 class="content-text"><strong>Email : </strong>{{usuario.email}}</h3>
+            <h3 class="content-text"><strong>Rol : </strong>{{usuario.rol}}</h3>
+            <h3 class="content-text"><strong>Feacha Nacimiento : </strong>{{usuario.fechaNac | date}}</h3>
+            <h3 class="content-text"><strong>Rol : </strong>{{usuario.rol}}</h3>
+            
+        </div>
+        <br>
+        <div class="content"><h3 class="content-text"><strong>Extras : </strong>{{usuario.comentario}}</h3></div>
+    </mat-card-content>
+    <mat-card-actions>
+        <!-- <button mat-button  color="warn">Cerrar</button> -->
+        <button (click)="logOut()" mat-raised-button color="warn">Cerrar Sesión</button>
+      </mat-card-actions>
+</mat-card>
+
+

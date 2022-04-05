@@ -1,0 +1,26 @@
+<table *ngIf="listMeals" mat-table  [dataSource]="listMeals | slice:0:20" class="mat-elevation-z8">
+    <ng-container matColumnDef="img">
+      <th mat-header-cell *matHeaderCellDef> <h3>Imagén </h3></th>
+      <td mat-cell *matCellDef="let element" ><img class="thumb" [src]="element.strMealThumb" alt=""></td>
+    </ng-container>
+    
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> <h3>Id Platillo</h3></th>
+      <td mat-cell *matCellDef="let element"> {{element.idMeal}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="ingr">
+      <th mat-header-cell *matHeaderCellDef> <h3>Nombre</h3> </th>
+      <td mat-cell *matCellDef="let element"  > {{element.strMeal}} </td>
+    </ng-container>
+  
+  
+    <ng-container matColumnDef="platillos">
+      <th mat-header-cell *matHeaderCellDef> <h3>Ver Detalles </h3></th>
+      <td mat-cell *matCellDef="let element"><button mat-button color="accent"
+          [routerLink]="['/pages/det-platillo', element.idMeal]">Ver detalles</button></td>
+    </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

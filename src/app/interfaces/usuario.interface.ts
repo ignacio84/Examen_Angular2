@@ -6,4 +6,9 @@ export interface UsuarioInterface {
     nombre:string;
     apellido:string;
     email:string;
+    img?:string;
+    fechaNac?:Date;
+    ocupacion?:string;
+    rol?:string;
+    comentario?:string;
 }

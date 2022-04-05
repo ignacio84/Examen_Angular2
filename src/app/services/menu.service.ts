@@ -10,29 +10,29 @@ export class MenuService {
     {
     titulo: 'Bienvenido',
     icono: 'usr',
-    url: '',
-    submenu:[
-      {
-        titulo: 'perfil',
-        icono: 'perfil',
-        url: '',
-      },
-      {
-        titulo: 'Cerrar Sesion',
-        icono: 'cerrar',
-        url: '',
-      }
-    ]
+    url: '/pages/home',
+    // submenu:[
+    //   {
+    //     titulo: 'perfil',
+    //     icono: 'perfil',
+    //     url: '',
+    //   },
+    //   {
+    //     titulo: 'Cerrar Sesion',
+    //     icono: 'cerrar',
+    //     url: '',
+    //   }
+    // ]
     },
     {
       titulo: 'Ingredientes Populares',
       icono: 'usr',
-      url: '',
+      url: '/pages/ingr-popu',
     },
     {
       titulo: 'Platillo',
       icono: 'usr',
-      url: '',
+      url: '/pages/platillo',
     },
     {
       titulo: 'Usuario',
@@ -42,12 +42,12 @@ export class MenuService {
         {
           titulo: 'perfil',
           icono: 'perfil',
-          url: '',
+          url: '/pages/perfil-usr',
         },
         {
           titulo: 'Cerrar Sesion',
           icono: 'cerrar',
-          url: '',
+          method:'cerrarSesion()',
         }
       ]
     },

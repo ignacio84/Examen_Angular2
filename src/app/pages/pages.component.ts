@@ -8,13 +8,9 @@ import { MenuService } from '../services/menu.service';
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.css']
 })
-export class PagesComponent implements OnInit {
-
+export class PagesComponent {
 
   constructor(private router: Router) { 
-  }
-
-  ngOnInit(): void {
   }
 
 }
